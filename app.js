@@ -10,6 +10,7 @@ import bodyParser from "body-parser";
 const app = express();
 
 app.use(cors());
+app.options('*', cors());
 app.use(bodyParser.json());
 app.use(helmet());
 app.use(morgan("combined"));
