@@ -12,9 +12,15 @@ import healthzRouter from "./router/healthz.js";
 
 const app = express();
 
+const corsOption = {
+  origin: '*',
+  optionsSuccessStatus: 200,
+  credentials: true, // allow the Access-Control-Allow-Credentials
+};
+
 app.use(express.json());
 app.use(helmet());
-app.use(cors());
+app.use(cors(corsOption));
 app.use(morgan('tiny'));
 
 app.use('/tweets', tweetsRouter);
