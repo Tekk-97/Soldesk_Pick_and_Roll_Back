@@ -8,6 +8,7 @@ import authRouter from './router/auth.js';
 import { config } from './config.js';
 import { initSocket } from './connection/socket.js';
 import { sequelize } from './db/database.js';
+import healthzRouter from "./router/healthz.js";
 
 const app = express();
 
@@ -18,6 +19,7 @@ app.use(morgan('tiny'));
 
 app.use('/tweets', tweetsRouter);
 app.use('/auth', authRouter);
+app.use("/healthz", healthzRouter);
 
 app.use((req, res, next) => {
   res.sendStatus(404);
