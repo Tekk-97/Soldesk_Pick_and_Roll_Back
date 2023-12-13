@@ -15,14 +15,14 @@ jobs:
     
     - name: Setting .env
       run: |
-        echo "JWT_SECRET=$JWT_SECRET" >> .env
-        echo "JWT_EXPIRES_SEC=$JWT_EXPIRES_SEC" >> .env
-        echo "BCRYPT_SALT_ROUNDS=$BCRYPT_SALT_ROUNDS" >> .env
-        echo "HOST_PORT=$HOST_PORT" >> .env
-        echo "DB_HOST=$DB_HOST" >> .env
-        echo "DB_USER=$DB_USER" >> .env
-        echo "DB_DATABASE=$DB_DATABASE" >> .env
-        echo "DB_PASSWORD=$DB_PASSWORD" >> .env
+        echo "JWT_SECRET=${{secrets.JWT_SECRET}}" >> .env
+        echo "JWT_EXPIRES_SEC=${{secrets.JWT_EXPIRES_SEC}}" >> .env
+        echo "BCRYPT_SALT_ROUNDS=${{secrets.BCRYPT_SALT_ROUNDS}}" >> .env
+        echo "HOST_PORT=${{secrets.HOST_PORT}}" >> .env
+        echo "DB_HOST=${{secrets.DB_HOST}}" >> .env
+        echo "DB_USER=${{secrets.DB_USER}}" >> .env
+        echo "DB_DATABASE=${{secrets.DB_DATABASE}}" >> .env
+        echo "DB_PASSWORD=${{secrets.DB_PASSWORD}}" >> .env
         cat .env
 
     - name: Set up Docker Buildx
