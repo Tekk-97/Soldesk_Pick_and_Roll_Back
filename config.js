@@ -11,19 +11,19 @@ function required(key, defaultValue = undefined) {
 
 export const config = {
   jwt: {
-    secretKey: required('JWT_SECRET', 'F2dN7x8HVzBWaQuEEDnhsvHXRWqAR63z'),
-    expiresInSec: parseInt(required('JWT_EXPIRES_SEC', 86400)),
+    secretKey: required('JWT_SECRET'),
+    expiresInSec: parseInt(required('JWT_EXPIRES_SEC')),
   },
   bcrypt: {
-    saltRounds: parseInt(required('BCRYPT_SALT_ROUNDS', 12)),
+    saltRounds: parseInt(required('BCRYPT_SALT_ROUNDS')),
   },
   host: {
-    port: parseInt(required('HOST_PORT', 80)),
+    port: parseInt(required('HOST_PORT')),
   },
   db: {
-    host: required('DB_HOST', "db.inter-pick-roll.xyz"),
-    user: required('DB_USER', "root"),
-    database: required('DB_DATABASE', "pickandroll"),
-    password: required('DB_PASSWORD', 'password'),
+    host: required('DB_HOST'),
+    user: required('DB_USER'),
+    database: required('DB_DATABASE'),
+    password: required('DB_PASSWORD'),
   },
 };
