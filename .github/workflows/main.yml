@@ -15,7 +15,7 @@ jobs:
     
     - name: Setting .env
       run: |
-        echo "JWT_SECRET=${{secrets.AWS_ACCESS_KEY_ID}}" >> .env
+        echo "JWT_SECRET=${{secrets.JWT_SECRET}}" >> .env
         echo "JWT_EXPIRES_SEC=${{secrets.JWT_EXPIRES_SEC}}" >> .env
         echo "BCRYPT_SALT_ROUNDS=${{secrets.BCRYPT_SALT_ROUNDS}}" >> .env
         echo "HOST_PORT=${{secrets.HOST_PORT}}" >> .env
