@@ -39,7 +39,7 @@ jobs:
       with:
         context: .
         push: true
-        tags: lundaljung/pick_and_roll_back:latest
+        tags: tekk42/pick_and_roll_back:latest
         cache-from: type=gha # gha는 Guthub Actions 용 캐시
         cache-to: type=gha,mode=max
     
